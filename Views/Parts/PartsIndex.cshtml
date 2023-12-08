@@ -1,0 +1,181 @@
+﻿@model InventoryTracker.Models.DomainComponents.PartsList
+@{
+    ViewData["Title"] = "PartsIndex";
+}
+
+@* Список процесорів
+ *@
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h1 class="text-primary">В наявності:</h1>
+            <h2 class="table-headers" style="color:#B46060; margin-bottom: 10px">Процесори</h2>
+            <a asp-controller="Parts" asp-action="CreateProcessor" class="btn btn-primary">
+               Add new item
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th style="text-align: center; color:#6A5ACD">
+                Manufacturer 
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Model
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Core count
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Thread count
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Clock speed
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Price
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Amount in stock
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var cpus in Model.Processors)
+        {
+            <tr>
+                <td width="20%" style="text-align: center">
+                    @cpus.Manufacturer
+                </td>
+                <td width="20%" style="text-align: center">
+                    @cpus.Model
+                </td>
+                <td width="10%" style="text-align: center">
+                    @cpus.CoreCount
+                </td>
+                <td width="10%" style="text-align: center">
+                    @cpus.ThreadCount
+                </td>
+                <td width="10%" style="text-align: center">
+                    @cpus.ClockSpeed
+                </td>
+                <td width="10%" style="text-align: center">
+                    @cpus.Price
+                </td>
+                <td width="10%" style="text-align: center>
+                    @cpus.AmountInStock
+                </td>
+
+                <td style="width: 100%;">
+                    <div class="w-100 btn-group d-flex justify-content-center" role="group">
+                        <a asp-controller="Parts" asp-action="EditProcessor" asp-route-id="@cpus.ProcessorId"
+                           class="btn btn-primary mx-2" style="width: 100%;">
+                            <i class="bi bi-pencil-square"></i> Edit
+                        </a>
+                        <a asp-controller="Parts" asp-action="DeleteProcessor" asp-route-id="@cpus.ProcessorId"
+                           class="btn btn-danger mx-2" style="width: 100%;">
+                            <i class="bi bi-trash-fill"></i> Delete
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+@* Список материнських плат
+ *@
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="table-headers" style="color:#B46060; margin-bottom: 10px">Материнські плати</h2>
+            <a asp-controller="Parts" asp-action="CreateMotherboard" class="btn btn-primary">
+                Add new item
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th style="text-align: center; color:#6A5ACD">
+                Manufacturer
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Model
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Socket
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                FormFactor
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                RAM slots
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Price
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Amount in stock
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var mdbs in Model.Motherboards)
+        {
+            <tr>
+                <td width="20%" style="text-align: center">
+                    @mdbs.Manufacturer
+                </td>
+                <td width="20%" style="text-align: center">
+                    @mdbs.Model
+                </td>
+                <td width="10%" style="text-align: center">
+                    @mdbs.Socket
+                </td>
+                <td width="10%" style="text-align: center">
+                    @mdbs.FormFactor
+                </td>
+                <td width="10%" style="text-align: center">
+                    @mdbs.RAMSlots
+                </td>
+                <td width="10%" style="text-align: center">
+                    @mdbs.Price
+                </td>
+                <td width="10%" style="text-align: center>
+                @mdbs.AmountInStock
+            </td>
+
+            <td style="width: 100%;">
+                    <div class="w-100 btn-group d-flex justify-content-center" role="group">
+                        <a asp-controller="Parts" asp-action="EditMotherboard" asp-route-id="@mdbs.MotherboardId"
+                           class="btn btn-primary mx-2" style="width: 100%;">
+                            <i class="bi bi-pencil-square"></i> Edit
+                        </a>
+                        <a asp-controller="Parts" asp-action="DeleteMotherboard" asp-route-id="@mdbs.MotherboardId"
+                           class="btn btn-danger mx-2" style="width: 100%;">
+                            <i class="bi bi-trash-fill"></i> Delete
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
