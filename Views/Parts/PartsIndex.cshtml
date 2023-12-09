@@ -160,15 +160,97 @@
                 </td>
                 <td width="10%" style="text-align: center>
                 @mdbs.AmountInStock
+                </td>
+
+                <td style="width: 100%;">
+                        <div class="w-100 btn-group d-flex justify-content-center" role="group">
+                            <a asp-controller="Parts" asp-action="EditMotherboard" asp-route-id="@mdbs.MotherboardId"
+                               class="btn btn-primary mx-2" style="width: 100%;">
+                                <i class="bi bi-pencil-square"></i> Edit
+                            </a>
+                            <a asp-controller="Parts" asp-action="DeleteMotherboard" asp-route-id="@mdbs.MotherboardId"
+                               class="btn btn-danger mx-2" style="width: 100%;">
+                                <i class="bi bi-trash-fill"></i> Delete
+                            </a>
+                        </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+@* Список відеокарт
+ *@
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="table-headers" style="color:#B46060; margin-bottom: 10px">Відеокарти</h2>
+            <a asp-controller="Parts" asp-action="CreateGraphicsCard" class="btn btn-primary">
+                Add new item
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th style="text-align: center; color:#6A5ACD">
+                Manufacturer
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Model
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Memory size
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Memory type
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Price
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Amount in stock
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var gpus in Model.GraphicsCards)
+        {
+            <tr>
+                <td width="20%" style="text-align: center">
+                    @gpus.Manufacturer
+                </td>
+                <td width="20%" style="text-align: center">
+                    @gpus.Model
+                </td>
+                <td width="10%" style="text-align: center">
+                    @gpus.MemorySize
+                </td>
+                <td width="10%" style="text-align: center">
+                    @gpus.MemoryType
+                </td>
+                <td width="10%" style="text-align: center">
+                    @gpus.Price
+                </td>
+                <td width="10%" style="text-align: center>
+                @gpus.AmountInStock
             </td>
 
             <td style="width: 100%;">
                     <div class="w-100 btn-group d-flex justify-content-center" role="group">
-                        <a asp-controller="Parts" asp-action="EditMotherboard" asp-route-id="@mdbs.MotherboardId"
+                        <a asp-controller="Parts" asp-action="EditGraphicsCard" asp-route-id="@gpus.GraphicsCardId"
                            class="btn btn-primary mx-2" style="width: 100%;">
                             <i class="bi bi-pencil-square"></i> Edit
                         </a>
-                        <a asp-controller="Parts" asp-action="DeleteMotherboard" asp-route-id="@mdbs.MotherboardId"
+                        <a asp-controller="Parts" asp-action="DeleteGraphicsCard" asp-route-id="@gpus.GraphicsCardId"
                            class="btn btn-danger mx-2" style="width: 100%;">
                             <i class="bi bi-trash-fill"></i> Delete
                         </a>
@@ -179,3 +261,366 @@
     </tbody>
 
 </table>
+
+@* Список дисків
+ *@
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="table-headers" style="color:#B46060; margin-bottom: 10px">Пристрої накопичення</h2>
+            <a asp-controller="Parts" asp-action="CreateDrives" class="btn btn-primary">
+                Add new item
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th style="text-align: center; color:#6A5ACD">
+                Manufacturer
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Model
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Type
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Capacity
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Connection interface
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Read speed
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Write speed
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Price
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Amount in stock
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var drvs in Model.Drives)
+        {
+            <tr>
+                <td width="20%" style="text-align: center">
+                    @drvs.Manufacturer
+                </td>
+                <td width="20%" style="text-align: center">
+                    @drvs.Model
+                </td>
+                <td width="20%" style="text-align: center">
+                    @drvs.Type  
+                </td>
+                <td width="20%" style="text-align: center">
+                    @drvs.Capacity
+                </td>
+                <td width="20%" style="text-align: center">
+                    @drvs.ReadSpeed
+                </td>
+                <td width="20%" style="text-align: center">
+                    @drvs.WriteSpeed
+                </td>
+                <td width="10%" style="text-align: center">
+                    @drvs.Price
+                </td>
+                <td width="10%" style="text-align: center>
+                    @drvs.AmountInStock
+                </td>
+
+                <td style="width: 100%;">
+                    <div class="w-100 btn-group d-flex justify-content-center" role="group">
+                        <a asp-controller="Parts" asp-action="EditGraphicsCard" asp-route-id="@drvs.DriveId"
+                           class="btn btn-primary mx-2" style="width: 100%;">
+                            <i class="bi bi-pencil-square"></i> Edit
+                        </a>
+                        <a asp-controller="Parts" asp-action="DeleteGraphicsCard" asp-route-id="@drvs.DriveId"
+                           class="btn btn-danger mx-2" style="width: 100%;">
+                            <i class="bi bi-trash-fill"></i> Delete
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+@* Список оперативної пам'яті
+ *@
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="table-headers" style="color:#B46060; margin-bottom: 10px">Оперативна пам'ять</h2>
+            <a asp-controller="Parts" asp-action="CreateRAM" class="btn btn-primary">
+                Add new item
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th style="text-align: center; color:#6A5ACD">
+                Manufacturer
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Memory Type
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Memory size
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Modules amount
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Frequency
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Price
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Amount in stock
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var rams in Model.RAMs)
+        {
+            <tr>
+                <td width="20%" style="text-align: center">
+                    @rams.Manufacturer
+                </td>
+                <td width="20%" style="text-align: center">
+                    @rams.MemoryType
+                </td>
+                <td width="20%" style="text-align: center">
+                    @rams.MemorySize    
+                </td>
+                <td width="20%" style="text-align: center">
+                    @rams.ModulesAmount
+                </td>
+                <td width="20%" style="text-align: center">
+                    @rams.Frequency
+                </td>
+                <td width="10%" style="text-align: center">
+                    @rams.Price
+                </td>
+                <td width="10%" style="text-align: center>
+                @rams.AmountInStock
+            </td>
+
+            <td style="width: 100%;">
+                    <div class="w-100 btn-group d-flex justify-content-center" role="group">
+                        <a asp-controller="Parts" asp-action="EditRAM" asp-route-id="@rams.RAMId"
+                           class="btn btn-primary mx-2" style="width: 100%;">
+                            <i class="bi bi-pencil-square"></i> Edit
+                        </a>
+                        <a asp-controller="Parts" asp-action="DeleteRAM" asp-route-id="@rams.RAMId"
+                           class="btn btn-danger mx-2" style="width: 100%;">
+                            <i class="bi bi-trash-fill"></i> Delete
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+@* Список блоків живлення
+ *@
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="table-headers" style="color:#B46060; margin-bottom: 10px">Оперативна пам'ять</h2>
+            <a asp-controller="Parts" asp-action="CreatePS" class="btn btn-primary">
+                Add new item
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th style="text-align: center; color:#6A5ACD">
+                Manufacturer
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Model
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Power
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Certification
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Graphics card connector
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Price
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Amount in stock
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var pws in Model.PowerSupplies)
+        {
+            <tr>
+                <td width="20%" style="text-align: center">
+                    @pws.Manufacturer
+                </td>
+                <td width="20%" style="text-align: center">
+                    @pws.Model
+                </td>
+                <td width="20%" style="text-align: center">
+                    @pws.Power
+                </td>
+                <td width="20%" style="text-align: center">
+                    @pws.Certification
+                </td>
+                <td width="20%" style="text-align: center">
+                    @pws.GraphicsCardConnector
+                </td>
+                <td width="10%" style="text-align: center">
+                    @pws.Price
+                </td>
+                <td width="10%" style="text-align: center>
+                @pws.AmountInStock
+                </td>
+
+            <td style="width: 100%;">
+                    <div class="w-100 btn-group d-flex justify-content-center" role="group">
+                        <a asp-controller="Parts" asp-action="EditPS" asp-route-id="@pws.PowerSupplyId"
+                           class="btn btn-primary mx-2" style="width: 100%;">
+                            <i class="bi bi-pencil-square"></i> Edit
+                        </a>
+                        <a asp-controller="Parts" asp-action="DeletePS" asp-route-id="@pws.PowerSupplyId"
+                           class="btn btn-danger mx-2" style="width: 100%;">
+                            <i class="bi bi-trash-fill"></i> Delete
+                        </a>
+                    </div>
+            </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+@* Список корпусів
+ *@
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="table-headers" style="color:#B46060; margin-bottom: 10px">Оперативна пам'ять</h2>
+            <a asp-controller="Parts" asp-action="CreateCase" class="btn btn-primary">
+                Add new item
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th style="text-align: center; color:#6A5ACD">
+                Manufacturer
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Model
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Type
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Color
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Motherboard form factor
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Price
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Amount in stock
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var cases in Model.Cases)
+        {
+            <tr>
+                <td width="20%" style="text-align: center">
+                    @cases.Manufacturer
+                </td>
+                <td width="20%" style="text-align: center">
+                    @cases.Model
+                </td>
+                <td width="20%" style="text-align: center">
+                    @cases.Type
+                </td>
+                <td width="20%" style="text-align: center">
+                    @cases.Color    
+                </td>
+                <td width="20%" style="text-align: center">
+                    @cases.MotherboardFormFactor
+                </td>
+                <td width="10%" style="text-align: center">
+                    @cases.Price
+                </td>
+                <td width="10%" style="text-align: center>
+                @cases.AmountInStock
+                </td>
+
+            <td style="width: 100%;">
+                    <div class="w-100 btn-group d-flex justify-content-center" role="group">
+                        <a asp-controller="Parts" asp-action="EditCase" asp-route-id="@cases.CaseId"
+                           class="btn btn-primary mx-2" style="width: 100%;">
+                            <i class="bi bi-pencil-square"></i> Edit
+                        </a>
+                        <a asp-controller="Parts" asp-action="DeleteCase" asp-route-id="@cases.CaseId"
+                           class="btn btn-danger mx-2" style="width: 100%;">
+                            <i class="bi bi-trash-fill"></i> Delete
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
