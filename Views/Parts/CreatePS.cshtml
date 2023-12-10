@@ -1,0 +1,51 @@
+﻿@using InventoryTracker.Models.DomainComponents
+@model PowerSupply
+
+<form method="post">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Create Item</h2>
+		</div>
+		<div asp-validation-summary="All"></div>
+		<div class="mb-3">
+			<label asp-for="Manufacturer"></label>
+			<input asp-for="Manufacturer" />
+			<span asp-validation-for="Manufacturer" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Model"></label>
+			<input asp-for="Model" />
+			<span asp-validation-for="Model" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<input asp-for="Power" />
+			<label asp-for="Power"></label>
+			<span asp-validation-for="Power" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Certification"></label>
+			<input asp-for="Certification" />
+			<span asp-validation-for="Certification" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="GraphicsCardConnector"></label>
+			<input asp-for="GraphicsCardConnector" />
+			<span asp-validation-for="GraphicsCardConnector" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<input asp-for="Price" />
+			<label asp-for="Price"></label>
+			<span asp-validation-for="Price" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="AmountInStock"></label>
+			<input asp-for="AmountInStock" />
+			<span asp-validation-for="AmountInStock" class="text-danger"></span>
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+		<a asp-controller="Parts" asp-action="PartsIndex" class="btn btn-secondary" style="width:150px">
+			Back to Catalogue
+		</a>
+	</div>
+
+</form>

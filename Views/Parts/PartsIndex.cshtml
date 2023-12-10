@@ -45,6 +45,9 @@
             <th>
 
             </th>
+            <th>
+
+            </th>
         </tr>
     </thead>
 
@@ -70,7 +73,7 @@
                 <td width="10%" style="text-align: center">
                     @cpus.Price
                 </td>
-                <td width="10%" style="text-align: center>
+                <td width="10%" style="text-align: center">
                     @cpus.AmountInStock
                 </td>
 
@@ -158,7 +161,7 @@
                 <td width="10%" style="text-align: center">
                     @mdbs.Price
                 </td>
-                <td width="10%" style="text-align: center>
+                <td width="10%" style="text-align: center">
                 @mdbs.AmountInStock
                 </td>
 
@@ -240,7 +243,7 @@
                 <td width="10%" style="text-align: center">
                     @gpus.Price
                 </td>
-                <td width="10%" style="text-align: center>
+                <td width="10%" style="text-align: center">
                 @gpus.AmountInStock
             </td>
 
@@ -262,7 +265,7 @@
 
 </table>
 
-@* Список дисків
+@* Список дисків - внести зміни для кнопок та amount in stock
  *@
 <div class="container p-3">
     <div class="row pt-4">
@@ -275,7 +278,7 @@
     </div>
 </div>
 
-
+    
 <table class="table table-bordered table-striped" style="width:100%">
     <thead>
         <tr>
@@ -329,6 +332,9 @@
                     @drvs.Capacity
                 </td>
                 <td width="20%" style="text-align: center">
+                    @drvs.ConnectionInterface
+                </td>
+                <td width="20%" style="text-align: center">
                     @drvs.ReadSpeed
                 </td>
                 <td width="20%" style="text-align: center">
@@ -337,7 +343,7 @@
                 <td width="10%" style="text-align: center">
                     @drvs.Price
                 </td>
-                <td width="10%" style="text-align: center>
+                <td width="10%" style="text-align: center">
                     @drvs.AmountInStock
                 </td>
 
@@ -425,7 +431,7 @@
                 <td width="10%" style="text-align: center">
                     @rams.Price
                 </td>
-                <td width="10%" style="text-align: center>
+                <td width="10%" style="text-align: center">
                 @rams.AmountInStock
             </td>
 
@@ -452,7 +458,7 @@
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
-            <h2 class="table-headers" style="color:#B46060; margin-bottom: 10px">Оперативна пам'ять</h2>
+            <h2 class="table-headers" style="color:#B46060; margin-bottom: 10px">Блоки живлення</h2>
             <a asp-controller="Parts" asp-action="CreatePS" class="btn btn-primary">
                 Add new item
             </a>
@@ -513,7 +519,7 @@
                 <td width="10%" style="text-align: center">
                     @pws.Price
                 </td>
-                <td width="10%" style="text-align: center>
+                <td width="10%" style="text-align: center">
                 @pws.AmountInStock
                 </td>
 
@@ -540,7 +546,7 @@
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
-            <h2 class="table-headers" style="color:#B46060; margin-bottom: 10px">Оперативна пам'ять</h2>
+            <h2 class="table-headers" style="color:#B46060; margin-bottom: 10px">Корпуси</h2>
             <a asp-controller="Parts" asp-action="CreateCase" class="btn btn-primary">
                 Add new item
             </a>
@@ -601,7 +607,7 @@
                 <td width="10%" style="text-align: center">
                     @cases.Price
                 </td>
-                <td width="10%" style="text-align: center>
+                <td width="10%" style="text-align: center">
                 @cases.AmountInStock
                 </td>
 

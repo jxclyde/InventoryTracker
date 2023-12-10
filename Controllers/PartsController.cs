@@ -102,7 +102,7 @@ namespace InventoryTracker.Controllers
             return View(processorFromDb);
         }
 
-        [HttpPost]
+        [HttpPost("DeleteProcessorPOST")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteProcessorPost(int? id)
         {
@@ -182,7 +182,7 @@ namespace InventoryTracker.Controllers
             return View(motherboardFromDb);
         }
 
-        [HttpPost]
+        [HttpPost("DeleteMotherboardPost")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteMotherboardPost(int? id)
         {
@@ -262,7 +262,7 @@ namespace InventoryTracker.Controllers
             return View(graphicsCardFromDb);
         }
 
-        [HttpPost]
+        [HttpPost("DeleteGPUPost")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteGPUPost(int? id)
         {
@@ -341,7 +341,7 @@ namespace InventoryTracker.Controllers
             return View(drivesFromDb);
         }
 
-        [HttpPost]
+        [HttpPost("DeleteDrivePost")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteDrivePost(int? id)
         {
@@ -421,7 +421,7 @@ namespace InventoryTracker.Controllers
             return View(ramsFromDb);
         }
 
-        [HttpPost]
+        [HttpPost("DeleteRAMPost")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteRAMPost(int? id)
         {
@@ -500,7 +500,7 @@ namespace InventoryTracker.Controllers
             return View(psFromDb);
         }
 
-        [HttpPost]
+        [HttpPost("DeletePSPost")]
         [ValidateAntiForgeryToken]
         public IActionResult DeletePSPost(int? id)
         {
@@ -579,7 +579,7 @@ namespace InventoryTracker.Controllers
             return View(casesFromDb);
         }
 
-        [HttpPost]
+        [HttpPost("DeleteCasePost")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteCasePost(int? id)
         {
