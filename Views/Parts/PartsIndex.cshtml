@@ -76,7 +76,7 @@
 
                 <td style="width: 100%;">
                     <div class="w-100 btn-group d-flex justify-content-center" role="group">
-                        <a asp-controller="Parts" asp-action="EditProcessor" asp-route-id="@cpus.ProcessorId"
+                        <a asp-controller="Parts" asp-action="UpdateProcessor" asp-route-id="@cpus.ProcessorId"
                            class="btn btn-primary mx-2" style="width: 100%;">
                             <i class="bi bi-pencil-square"></i> Edit
                         </a>
@@ -164,7 +164,7 @@
 
                 <td style="width: 100%;">
                         <div class="w-100 btn-group d-flex justify-content-center" role="group">
-                            <a asp-controller="Parts" asp-action="EditMotherboard" asp-route-id="@mdbs.MotherboardId"
+                            <a asp-controller="Parts" asp-action="UpdateMotherboard" asp-route-id="@mdbs.MotherboardId"
                                class="btn btn-primary mx-2" style="width: 100%;">
                                 <i class="bi bi-pencil-square"></i> Edit
                             </a>
@@ -186,7 +186,7 @@
     <div class="row pt-4">
         <div class="col-6">
             <h2 class="table-headers" style="color:#B46060; margin-bottom: 10px">Відеокарти</h2>
-            <a asp-controller="Parts" asp-action="CreateGraphicsCard" class="btn btn-primary">
+            <a asp-controller="Parts" asp-action="CreateGPU" class="btn btn-primary">
                 Add new item
             </a>
         </div>
@@ -246,11 +246,11 @@
 
             <td style="width: 100%;">
                     <div class="w-100 btn-group d-flex justify-content-center" role="group">
-                        <a asp-controller="Parts" asp-action="EditGraphicsCard" asp-route-id="@gpus.GraphicsCardId"
+                        <a asp-controller="Parts" asp-action="UpdateGPU" asp-route-id="@gpus.GraphicsCardId"
                            class="btn btn-primary mx-2" style="width: 100%;">
                             <i class="bi bi-pencil-square"></i> Edit
                         </a>
-                        <a asp-controller="Parts" asp-action="DeleteGraphicsCard" asp-route-id="@gpus.GraphicsCardId"
+                        <a asp-controller="Parts" asp-action="DeleteGPU" asp-route-id="@gpus.GraphicsCardId"
                            class="btn btn-danger mx-2" style="width: 100%;">
                             <i class="bi bi-trash-fill"></i> Delete
                         </a>
@@ -268,7 +268,7 @@
     <div class="row pt-4">
         <div class="col-6">
             <h2 class="table-headers" style="color:#B46060; margin-bottom: 10px">Пристрої накопичення</h2>
-            <a asp-controller="Parts" asp-action="CreateDrives" class="btn btn-primary">
+            <a asp-controller="Parts" asp-action="CreateDrive" class="btn btn-primary">
                 Add new item
             </a>
         </div>
@@ -343,11 +343,11 @@
 
                 <td style="width: 100%;">
                     <div class="w-100 btn-group d-flex justify-content-center" role="group">
-                        <a asp-controller="Parts" asp-action="EditGraphicsCard" asp-route-id="@drvs.DriveId"
+                        <a asp-controller="Parts" asp-action="UpdateDrive" asp-route-id="@drvs.DriveId"
                            class="btn btn-primary mx-2" style="width: 100%;">
                             <i class="bi bi-pencil-square"></i> Edit
                         </a>
-                        <a asp-controller="Parts" asp-action="DeleteGraphicsCard" asp-route-id="@drvs.DriveId"
+                        <a asp-controller="Parts" asp-action="DeleteDrive" asp-route-id="@drvs.DriveId"
                            class="btn btn-danger mx-2" style="width: 100%;">
                             <i class="bi bi-trash-fill"></i> Delete
                         </a>
@@ -431,7 +431,7 @@
 
             <td style="width: 100%;">
                     <div class="w-100 btn-group d-flex justify-content-center" role="group">
-                        <a asp-controller="Parts" asp-action="EditRAM" asp-route-id="@rams.RAMId"
+                        <a asp-controller="Parts" asp-action="UpdateRAM" asp-route-id="@rams.RAMId"
                            class="btn btn-primary mx-2" style="width: 100%;">
                             <i class="bi bi-pencil-square"></i> Edit
                         </a>
@@ -519,7 +519,7 @@
 
             <td style="width: 100%;">
                     <div class="w-100 btn-group d-flex justify-content-center" role="group">
-                        <a asp-controller="Parts" asp-action="EditPS" asp-route-id="@pws.PowerSupplyId"
+                        <a asp-controller="Parts" asp-action="UpdatePS" asp-route-id="@pws.PowerSupplyId"
                            class="btn btn-primary mx-2" style="width: 100%;">
                             <i class="bi bi-pencil-square"></i> Edit
                         </a>
@@ -607,7 +607,7 @@
 
             <td style="width: 100%;">
                     <div class="w-100 btn-group d-flex justify-content-center" role="group">
-                        <a asp-controller="Parts" asp-action="EditCase" asp-route-id="@cases.CaseId"
+                        <a asp-controller="Parts" asp-action="UpdateCase" asp-route-id="@cases.CaseId"
                            class="btn btn-primary mx-2" style="width: 100%;">
                             <i class="bi bi-pencil-square"></i> Edit
                         </a>
