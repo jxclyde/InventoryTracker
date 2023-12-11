@@ -18,7 +18,7 @@
 </div>
 
 
-<table class="table table-bordered table-striped" style="width:100%">
+<table id="processorTable" class="table table-bordered table-striped" style="width:100%">
     <thead>
         <tr>
             <th style="text-align: center; color:#6A5ACD">
@@ -45,9 +45,9 @@
             <th>
 
             </th>
-            <th>
+ @*            <th>
 
-            </th>
+            </th> *@
         </tr>
     </thead>
 
@@ -79,11 +79,11 @@
 
                 <td style="width: 100%;">
                     <div class="w-100 btn-group d-flex justify-content-center" role="group">
-                        <a asp-controller="Parts" asp-action="UpdateProcessor" asp-route-id="@cpus.ProcessorId"
+                        <a id="editCPUButton" asp-controller="Parts" asp-action="UpdateProcessor" asp-route-id="@cpus.ProcessorId"
                            class="btn btn-primary mx-2" style="width: 100%;">
                             <i class="bi bi-pencil-square"></i> Edit
                         </a>
-                        <a asp-controller="Parts" asp-action="DeleteProcessor" asp-route-id="@cpus.ProcessorId"
+                        <a id="deleteCPUButton" asp-controller="Parts" asp-action="DeleteProcessor" asp-route-id="@cpus.ProcessorId"
                            class="btn btn-danger mx-2" style="width: 100%;">
                             <i class="bi bi-trash-fill"></i> Delete
                         </a>
@@ -94,6 +94,24 @@
     </tbody>
 
 </table>
+<button id="downloadPDF" class="btn btn-outline-dark">Download as PDF</button>
+
+<script>
+    document.getElementById("downloadPDF").addEventListener("click", function () {
+        var table = document.getElementById("processorTable");
+        table.style.width = "100%";
+        table.style.borderCollapse = "collapse";
+
+        var cells = table.querySelectorAll("th, td");
+        cells.forEach(function (cell) {
+            cell.style.padding = "4px";
+        });
+
+        var customName = "Наявні процесори";
+        html2pdf().from(table).save(customName + ".pdf");
+    });
+
+</script>
 
 @* Список материнських плат
  *@
@@ -109,7 +127,7 @@
 </div>
 
 
-<table class="table table-bordered table-striped" style="width:100%">
+<table id="motherboardsTable" class="table table-bordered table-striped" style="width:100%">
     <thead>
         <tr>
             <th style="text-align: center; color:#6A5ACD">
@@ -182,6 +200,24 @@
     </tbody>
 
 </table>
+<button id="downloadPDFmb" class="btn btn-outline-dark">Download as PDF</button>
+
+<script>
+    document.getElementById("downloadPDFmb").addEventListener("click", function () {
+        var table = document.getElementById("motherboardsTable");
+        table.style.width = "100%";
+        table.style.borderCollapse = "collapse";
+
+        var cells = table.querySelectorAll("th, td");
+        cells.forEach(function (cell) {
+            cell.style.padding = "4px";
+        });
+
+        var customName = "Наявні материнські плати";
+        html2pdf().from(table).save(customName + ".pdf");
+    });
+
+</script>
 
 @* Список відеокарт
  *@
@@ -197,7 +233,7 @@
 </div>
 
 
-<table class="table table-bordered table-striped" style="width:100%">
+<table id="graphicsTable" class="table table-bordered table-striped" style="width:100%">
     <thead>
         <tr>
             <th style="text-align: center; color:#6A5ACD">
@@ -264,8 +300,26 @@
     </tbody>
 
 </table>
+<button id="downloadPDFgpu" class="btn btn-outline-dark">Download as PDF</button>
 
-@* Список дисків - внести зміни для кнопок та amount in stock
+<script>
+    document.getElementById("downloadPDFgpu").addEventListener("click", function () {
+        var table = document.getElementById("graphicsTable");
+        table.style.width = "100%";
+        table.style.borderCollapse = "collapse";
+
+        var cells = table.querySelectorAll("th, td");
+        cells.forEach(function (cell) {
+            cell.style.padding = "4px";
+        });
+
+        var customName = "Наявні відеокарти";
+        html2pdf().from(table).save(customName + ".pdf");
+    });
+
+</script>
+
+@* Список дисків 
  *@
 <div class="container p-3">
     <div class="row pt-4">
@@ -279,7 +333,7 @@
 </div>
 
     
-<table class="table table-bordered table-striped" style="width:100%">
+<table id="drivesTable" class="table table-bordered table-striped" style="width:100%">
     <thead>
         <tr>
             <th style="text-align: center; color:#6A5ACD">
@@ -364,6 +418,24 @@
     </tbody>
 
 </table>
+<button id="downloadPDFdr" class="btn btn-outline-dark">Download as PDF</button>
+
+<script>
+    document.getElementById("downloadPDFdr").addEventListener("click", function () {
+        var table = document.getElementById("drivesTable");
+        table.style.width = "100%";
+        table.style.borderCollapse = "collapse";
+
+        var cells = table.querySelectorAll("th, td");
+        cells.forEach(function (cell) {
+            cell.style.padding = "4px";
+        });
+
+        var customName = "Наявні пристрої накопичення";
+        html2pdf().from(table).save(customName + ".pdf");
+    });
+
+</script>
 
 @* Список оперативної пам'яті
  *@
@@ -379,7 +451,7 @@
 </div>
 
 
-<table class="table table-bordered table-striped" style="width:100%">
+<table id="ramsTable" class="table table-bordered table-striped" style="width:100%">
     <thead>
         <tr>
             <th style="text-align: center; color:#6A5ACD">
@@ -452,6 +524,24 @@
     </tbody>
 
 </table>
+<button id="downloadPDFram" class="btn btn-outline-dark">Download as PDF</button>
+
+<script>
+    document.getElementById("downloadPDFram").addEventListener("click", function () {
+        var table = document.getElementById("ramsTable");
+        table.style.width = "100%";
+        table.style.borderCollapse = "collapse";
+
+        var cells = table.querySelectorAll("th, td");
+        cells.forEach(function (cell) {
+            cell.style.padding = "4px";
+        });
+
+        var customName = "Наявна оперативна пам'ять";
+        html2pdf().from(table).save(customName + ".pdf");
+    });
+
+</script>
 
 @* Список блоків живлення
  *@
@@ -467,7 +557,7 @@
 </div>
 
 
-<table class="table table-bordered table-striped" style="width:100%">
+<table id="psTable" class="table table-bordered table-striped" style="width:100%">
     <thead>
         <tr>
             <th style="text-align: center; color:#6A5ACD">
@@ -540,6 +630,23 @@
     </tbody>
 
 </table>
+<button id="downloadPDFps" class="btn btn-outline-dark">Download as PDF</button>
+<script>
+    document.getElementById("downloadPDFps").addEventListener("click", function () {
+        var table = document.getElementById("psTable");
+        table.style.width = "100%";
+        table.style.borderCollapse = "collapse";
+
+        var cells = table.querySelectorAll("th, td");
+        cells.forEach(function (cell) {
+            cell.style.padding = "4px";
+        });
+
+        var customName = "Наявні блоки живлення";
+        html2pdf().from(table).save(customName + ".pdf");
+    });
+
+</script>
 
 @* Список корпусів
  *@
@@ -555,7 +662,7 @@
 </div>
 
 
-<table class="table table-bordered table-striped" style="width:100%">
+<table id="casesTable" class="table table-bordered table-striped" style="width:100%">
     <thead>
         <tr>
             <th style="text-align: center; color:#6A5ACD">
@@ -628,5 +735,24 @@
     </tbody>
 
 </table>
+
+<button id="downloadPDFcase" class="btn btn-outline-dark">Download as PDF</button>
+
+<script>
+    document.getElementById("downloadPDFcase").addEventListener("click", function () {
+        var table = document.getElementById("casesTable");
+        table.style.width = "100%";
+        table.style.borderCollapse = "collapse";
+
+        var cells = table.querySelectorAll("th, td");
+        cells.forEach(function (cell) {
+            cell.style.padding = "4px";
+        });
+
+        var customName = "Наявні корпуси";
+        html2pdf().from(table).save(customName + ".pdf");
+    });
+
+</script>
 
 
