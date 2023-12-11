@@ -1,8 +1,53 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@using InventoryTracker.Models.DomainComponents
+@model GPUtoChart
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-start">
+    <h1 class="display-4">З поверненням !</h1>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<canvas id="gpuChart"></canvas>
+
+<style>
+    #gpuChart {
+        width: 800px;
+        height: 500px;
+    }
+</style>
+
+<script>
+    // Retrieve data from the view model
+    // Data retrieved and assigned to variables (manufacturers, models, and prices) using Razor syntax,
+    // this way it allows the server-side data to be passed to the JavaScript code
+    var manufacturers = @Html.Raw(Json.Serialize(Model.Manufactures));
+    var models =        @Html.Raw(Json.Serialize(Model.Models));
+    var prices =        @Html.Raw(Json.Serialize(Model.Prices));
+
+    // Using Chart.js to render the graph
+    var ctx = document.getElementById('gpuChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: models,
+            datasets: [{
+                label: 'Ціна',
+                data: prices,
+                backgroundColor: 'rgb(0, 223, 162)',
+                borderColor: 'rgb(0, 121, 255)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y:
+                {
+                    beginAtZero: true,
+                    ticks: {
+                        color: 'rgb(7, 10, 82)'
+                    }
+                }
+            }
+        }
+    });
+</script>

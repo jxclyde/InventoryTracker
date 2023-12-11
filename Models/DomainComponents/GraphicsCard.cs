@@ -21,5 +21,6 @@ namespace InventoryTracker.Models.DomainComponents
         [Required]
         [Range(0, int.MaxValue, ErrorMessage = "Impossible to set negative values !")]
         public int AmountInStock { get; set; }
+
     }
 }
