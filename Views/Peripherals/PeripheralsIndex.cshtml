@@ -1,0 +1,353 @@
+﻿@model InventoryTracker.Models.DomainPeripherals.PeripheralsList
+@{
+    ViewData["Title"] = "PartsIndex";
+}
+
+@* Список клавіатур
+ *@
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h1 class="text-primary">Периферія в наявності:</h1>
+            <h2 class="table-headers" style="color:#B46060; margin-bottom: 10px">Клавіатури</h2>
+            <a asp-controller="Peripherals" asp-action="CreateKeyboard" class="btn btn-primary">
+                Додати
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<table id="keyboardsTable" class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th style="text-align: center; color:#6A5ACD">
+                Виробник
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Модель
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Форм-фактор
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Тип кейкапів
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Матеріал кейкапів
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Колір
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Тип
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Розкладка
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Тип підключення
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Ціна
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Наявність, од
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var keyb in Model.Keyboards)
+        {
+            <tr>
+                <td width="20%" style="text-align: center">
+                    @keyb.Manufacturer
+                </td>
+                <td width="20%" style="text-align: center">
+                    @keyb.Model
+                </td>
+                <td width="10%" style="text-align: center">
+                    @keyb.FormFactor
+                </td>
+                <td width="10%" style="text-align: center">
+                    @keyb.KeycapType
+                </td>
+                <td width="10%" style="text-align: center">
+                    @keyb.KeycapMaterial
+                </td>
+                <td width="10%" style="text-align: center">
+                    @keyb.Color
+                </td>
+                <td width="10%" style="text-align: center">
+                    @keyb.Type
+                </td>
+                <td width="10%" style="text-align: center">
+                    @keyb.Layout
+                </td>
+                <td width="10%" style="text-align: center">
+                    @keyb.ConnectionType
+                </td>
+                <td width="10%" style="text-align: center">
+                    @keyb.Price
+                </td>
+                <td width="10%" style="text-align: center">
+                    @keyb.AmountInStock
+                </td>
+
+                <td style="width: 100%;">
+                    <div class="w-100 btn-group d-flex justify-content-center" role="group">
+                        <a asp-controller="Peripherals" asp-action="UpdateKeyboard" asp-route-id="@keyb.KeyboardId"
+                           class="btn btn-primary mx-2" style="width: 100%;">
+                            <i class="bi bi-pencil-square"></i> Редагувати
+                        </a>
+                        <a asp-controller="Peripherals" asp-action="DeleteKeyboard" asp-route-id="@keyb.KeyboardId"
+                           class="btn btn-danger mx-2" style="width: 100%;">
+                            <i class="bi bi-trash-fill"></i> Видалити
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+<button id="downloadPDFkeyboards" class="btn btn-outline-dark">Скачати як PDF</button>
+
+<script>
+    document.getElementById("downloadPDFkeyboards").addEventListener("click", function () {
+        var table = document.getElementById("keyboardsTable");
+        table.style.width = "100%";
+        table.style.borderCollapse = "collapse";
+
+        var cells = table.querySelectorAll("th, td");
+        cells.forEach(function (cell) {
+            cell.style.padding = "4px";
+        });
+
+        var customName = "Наявні клавіатури";
+        html2pdf().from(table).save(customName + ".pdf");
+    });
+
+</script>
+
+@* Список мишок
+ *@
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="table-headers" style="color:#B46060; margin-bottom: 10px">Миші</h2>
+            <a asp-controller="Peripherals" asp-action="CreateMice" class="btn btn-primary">
+                Додати
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<table id="miceTable" class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th style="text-align: center; color:#6A5ACD">
+                Виробник
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Модель
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Колір
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                DPI-діапазон
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Тип підключення
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Ціна
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Наявність, од
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var mice in Model.Mice)
+        {
+            <tr>
+                <td width="20%" style="text-align: center">
+                    @mice.Manufacturer
+                </td>
+                <td width="20%" style="text-align: center">
+                    @mice.Model
+                </td>
+                <td width="10%" style="text-align: center">
+                    @mice.Color
+                </td>
+                <td width="10%" style="text-align: center">
+                    @mice.DPIRange
+                </td>
+                <td width="10%" style="text-align: center">
+                    @mice.ConnectionType
+                </td>
+                <td width="10%" style="text-align: center">
+                    @mice.Price
+                </td>
+                <td width="10%" style="text-align: center">
+                    @mice.AmountInStock
+                </td>
+
+                <td style="width: 100%;">
+                    <div class="w-100 btn-group d-flex justify-content-center" role="group">
+                        <a asp-controller="Peripherals" asp-action="UpdateMouse" asp-route-id="@mice.MouseId"
+                           class="btn btn-primary mx-2" style="width: 100%;">
+                            <i class="bi bi-pencil-square"></i> Редагувати
+                        </a>
+                        <a asp-controller="Peripherals" asp-action="DeleteMouse" asp-route-id="@mice.MouseId"
+                           class="btn btn-danger mx-2" style="width: 100%;">
+                            <i class="bi bi-trash-fill"></i> Видалити
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+<button id="downloadPDFmice" class="btn btn-outline-dark">Скачати як PDF</button>
+
+<script>
+    document.getElementById("downloadPDFmice").addEventListener("click", function () {
+        var table = document.getElementById("miceTable");
+        table.style.width = "100%";
+        table.style.borderCollapse = "collapse";
+
+        var cells = table.querySelectorAll("th, td");
+        cells.forEach(function (cell) {
+            cell.style.padding = "4px";
+        });
+
+        var customName = "Наявні миші";
+        html2pdf().from(table).save(customName + ".pdf");
+    });
+
+</script>
+
+@* Список килимків для миші
+ *@
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="table-headers" style="color:#B46060; margin-bottom: 10px">Килимки</h2>
+            <a asp-controller="Peripherals" asp-action="CreateMousepad" class="btn btn-primary">
+                Додати
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<table id="mousepadTable" class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th style="text-align: center; color:#6A5ACD">
+                Виробник
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Модель
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Варіант розмір
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Розмірності
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Колір
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Матеріал
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Ціна
+            </th>
+            <th style="text-align: center; color:#6A5ACD">
+                Наявність, од
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var mpad in Model.Mousepads)
+        {
+            <tr>
+                <td width="20%" style="text-align: center">
+                    @mpad.Manufacturer
+                </td>
+                <td width="20%" style="text-align: center">
+                    @mpad.Model
+                </td>
+                <td width="10%" style="text-align: center">
+                    @mpad.Size
+                </td>
+                <td width="10%" style="text-align: center">
+                    @mpad.Dimensions
+                </td>
+                <td width="10%" style="text-align: center">
+                    @mpad.Color
+                </td>
+                <td width="10%" style="text-align: center">
+                    @mpad.Material
+                </td>
+                <td width="10%" style="text-align: center">
+                    @mpad.Price
+                </td>
+                <td width="10%" style="text-align: center">
+                    @mpad.AmountInStock
+                </td>
+
+                <td style="width: 100%;">
+                    <div class="w-100 btn-group d-flex justify-content-center" role="group">
+                        <a asp-controller="Peripherals" asp-action="UpdateMousepad" asp-route-id="@mpad.MousepadId"
+                           class="btn btn-primary mx-2" style="width: 100%;">
+                            <i class="bi bi-pencil-square"></i> Редагувати
+                        </a>
+                        <a asp-controller="Peripherals" asp-action="DeleteMousepad" asp-route-id="@mpad.MousepadId"
+                           class="btn btn-danger mx-2" style="width: 100%;">
+                            <i class="bi bi-trash-fill"></i> Видалити
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+<button id="downloadPDFmpads" class="btn btn-outline-dark">Скачати як PDF</button>
+
+<script>
+    document.getElementById("downloadPDFmpads").addEventListener("click", function () {
+        var table = document.getElementById("mousepadTable");
+        table.style.width = "100%";
+        table.style.borderCollapse = "collapse";
+
+        var cells = table.querySelectorAll("th, td");
+        cells.forEach(function (cell) {
+            cell.style.padding = "4px";
+        });
+
+        var customName = "Наявні килимки для миші";
+        html2pdf().from(table).save(customName + ".pdf");
+    });
+
+</script>

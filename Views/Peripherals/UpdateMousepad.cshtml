@@ -1,0 +1,57 @@
+﻿@using InventoryTracker.Models.DomainPeripherals
+@model Mousepad
+
+<form method="post" asp-action="UpdateMousepad">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Редагувати</h2>
+		</div>
+		<div asp-validation-summary="All"></div>
+		<input type="hidden" asp-for="MousepadId" />
+		<div class="mb-3">
+			<label asp-for="Manufacturer"></label>
+			<input asp-for="Manufacturer" />
+			<span asp-validation-for="Manufacturer" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Model"></label>
+			<input asp-for="Model" />
+			<span asp-validation-for="Model" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<input asp-for="Size" />
+			<label asp-for="Size"></label>
+			<span asp-validation-for="Size" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Dimensions"></label>
+			<input asp-for="Dimensions" />
+			<span asp-validation-for="Dimensions" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Color"></label>
+			<input asp-for="Color" />
+			<span asp-validation-for="Color" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Material"></label>
+			<input asp-for="Material" />
+			<span asp-validation-for="Material" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<input asp-for="Price" />
+			<label asp-for="Price"></label>
+			<span asp-validation-for="Price" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="AmountInStock"></label>
+			<input asp-for="AmountInStock" />
+			<span asp-validation-for="AmountInStock" class="text-danger"></span>
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:150px">Оновити</button>
+		<a asp-controller="Peripherals" asp-action="PeripheralsIndex" class="btn btn-secondary" style="width:150px">
+			Назад до каталогу
+		</a>
+	</div>
+
+</form>

@@ -1,10 +1,10 @@
-﻿@using InventoryTracker.Models.DomainComponents
-@model Processor
+﻿@using InventoryTracker.Models.DomainPeripherals
+@model Mouse
 
 <form method="post">
 	<div class="border p-3 mt-4">
 		<div class="row pb-2">
-			<h2 class="text-primary">Create Item</h2>
+			<h2 class="text-primary">Додавання</h2>
 		</div>
 		<div asp-validation-summary="All"></div>
 		<div class="mb-3">
@@ -18,14 +18,19 @@
 			<span asp-validation-for="Model" class="text-danger"></span>
 		</div>
 		<div class="mb-3">
-			<input asp-for="CoreCount" />
-			<label asp-for="CoreCount"></label>
-			<span asp-validation-for="CoreCount" class="text-danger"></span>
+			<input asp-for="Color" />
+			<label asp-for="Color"></label>
+			<span asp-validation-for="Color" class="text-danger"></span>
 		</div>
 		<div class="mb-3">
-			<label asp-for="ThreadCount"></label>
-			<input asp-for="ThreadCount" />
-			<span asp-validation-for="ThreadCount" class="text-danger"></span>
+			<label asp-for="DPIRange"></label>
+			<input asp-for="DPIRange" />
+			<span asp-validation-for="DPIRange" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="ConnectionType"></label>
+			<input asp-for="ConnectionType" />
+			<span asp-validation-for="ConnectionType" class="text-danger"></span>
 		</div>
 		<div class="mb-3">
 			<input asp-for="Price" />
@@ -38,7 +43,7 @@
 			<span asp-validation-for="AmountInStock" class="text-danger"></span>
 		</div>
 		<button type="submit" class="btn btn-primary" style="width:150px">Додати</button>
-		<a asp-controller="Parts" asp-action="PartsIndex" class="btn btn-secondary" style="width:150px">
+		<a asp-controller="Peripherals" asp-action="PeripheralsIndex" class="btn btn-secondary" style="width:150px">
 			Назад до каталогу
 		</a>
 	</div>
