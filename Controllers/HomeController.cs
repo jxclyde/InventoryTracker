@@ -17,6 +17,7 @@ namespace InventoryTracker.Controllers
             _context = context;
         }
 
+        // Передаємо інфу з GPUtoChart значення для графіку
         public IActionResult Index()
         {
             var gpuData = _context.GraphicsCards.ToList();

@@ -10,6 +10,7 @@ namespace InventoryTracker.Data
         {
         }
 
+        // DbSets для роботи з усіма товарами
         public DbSet<Case> Cases { get; set; }
         public DbSet<Drive> Drives { get; set; }
         public DbSet<GraphicsCard> GraphicsCards { get; set; }

@@ -17,14 +17,15 @@
 </style>
 
 <script>
-    // Retrieve data from the view model
-    // Data retrieved and assigned to variables (manufacturers, models, and prices) using Razor syntax,
-    // this way it allows the server-side data to be passed to the JavaScript code
+    // Для відображення цього графіку було обрано відеокарту як найпопулрніший товар
+    // Ми отримаємо дані з GPUtoChart
+    // Отримана інфа присвоєються до відповідних змінних (manufacturers, models, and prices) 
+    // І далі JavaScript code з Chart.js відображає графік
     var manufacturers = @Html.Raw(Json.Serialize(Model.Manufactures));
     var models =        @Html.Raw(Json.Serialize(Model.Models));
     var prices =        @Html.Raw(Json.Serialize(Model.Prices));
 
-    // Using Chart.js to render the graph
+    // Chart.js рендерить графік 
     var ctx = document.getElementById('gpuChart').getContext('2d');
     var chart = new Chart(ctx, {
         type: 'bar',
