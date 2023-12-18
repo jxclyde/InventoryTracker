@@ -2,7 +2,7 @@
 
 namespace InventoryTracker.Models.DomainComponents
 {
-    public class GraphicsCard
+    public class GraphicsCard // На діаграмі класів діаграма - (8)
     {
         [Key]
         public int GraphicsCardId { get; set; }

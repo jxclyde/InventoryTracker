@@ -32,11 +32,13 @@ namespace InventoryTracker.Controllers
             return View(gpuChartModel);
         }
 
+        // Сторінка з основною інформацією
         public IActionResult Privacy()
         {
             return View();
         }
 
+        // Сторінка з підтримкою
         public IActionResult Support()
         {
             return View();

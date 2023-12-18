@@ -326,7 +326,7 @@
         <div class="col-6">
             <h2 class="table-headers" style="color:#B46060; margin-bottom: 10px">Пристрої накопичення</h2>
             <a asp-controller="Parts" asp-action="CreateDrive" class="btn btn-primary">
-                Add new item
+                Додати
             </a>
         </div>
     </div>
@@ -337,31 +337,31 @@
     <thead>
         <tr>
             <th style="text-align: center; color:#6A5ACD">
-                Manufacturer
+                Виробник
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Model
+                Модель
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Type
+                Тип
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Capacity
+                Об'єм, Гб
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Connection interface
+                Інтерфейс підключення
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Read speed
+                Швидкість читання
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Write speed
+                Швидкість запису
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Price
+                Ціна
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Amount in stock
+                Наявність,од
             </th>
             <th>
 
@@ -405,11 +405,11 @@
                     <div class="w-100 btn-group d-flex justify-content-center" role="group">
                         <a asp-controller="Parts" asp-action="UpdateDrive" asp-route-id="@drvs.DriveId"
                            class="btn btn-primary mx-2" style="width: 100%;">
-                            <i class="bi bi-pencil-square"></i> Edit
+                            <i class="bi bi-pencil-square"></i> Оновити
                         </a>
                         <a asp-controller="Parts" asp-action="DeleteDrive" asp-route-id="@drvs.DriveId"
                            class="btn btn-danger mx-2" style="width: 100%;">
-                            <i class="bi bi-trash-fill"></i> Delete
+                            <i class="bi bi-trash-fill"></i> Видалити
                         </a>
                     </div>
                 </td>
@@ -444,7 +444,7 @@
         <div class="col-6">
             <h2 class="table-headers" style="color:#B46060; margin-bottom: 10px">Оперативна пам'ять</h2>
             <a asp-controller="Parts" asp-action="CreateRAM" class="btn btn-primary">
-                Add new item
+                Додати
             </a>
         </div>
     </div>
@@ -455,25 +455,25 @@
     <thead>
         <tr>
             <th style="text-align: center; color:#6A5ACD">
-                Manufacturer
+                Виробник
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Memory Type
+                Тип пам'яті
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Memory size
+                Пам'ять, Гб
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Modules amount
+                К-сть модулів   
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Frequency
+                Частота
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Price
+                Ціна
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Amount in stock
+                Наявність,од
             </th>
             <th>
 
@@ -511,11 +511,11 @@
                     <div class="w-100 btn-group d-flex justify-content-center" role="group">
                         <a asp-controller="Parts" asp-action="UpdateRAM" asp-route-id="@rams.RAMId"
                            class="btn btn-primary mx-2" style="width: 100%;">
-                            <i class="bi bi-pencil-square"></i> Edit
+                            <i class="bi bi-pencil-square"></i> Оновити
                         </a>
                         <a asp-controller="Parts" asp-action="DeleteRAM" asp-route-id="@rams.RAMId"
                            class="btn btn-danger mx-2" style="width: 100%;">
-                            <i class="bi bi-trash-fill"></i> Delete
+                            <i class="bi bi-trash-fill"></i> Видалити
                         </a>
                     </div>
                 </td>
@@ -550,7 +550,7 @@
         <div class="col-6">
             <h2 class="table-headers" style="color:#B46060; margin-bottom: 10px">Блоки живлення</h2>
             <a asp-controller="Parts" asp-action="CreatePS" class="btn btn-primary">
-                Add new item
+                Додати
             </a>
         </div>
     </div>
@@ -561,25 +561,25 @@
     <thead>
         <tr>
             <th style="text-align: center; color:#6A5ACD">
-                Manufacturer
+                Виробник
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Model
+                Модель
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Power
+                Потужність   
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Certification
+                Сертифікат
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Graphics card connector
+                Підключення до відеокарт
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Price
+                Ціна
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Amount in stock
+                Наявність,од
             </th>
             <th>
 
@@ -617,11 +617,11 @@
                     <div class="w-100 btn-group d-flex justify-content-center" role="group">
                         <a asp-controller="Parts" asp-action="UpdatePS" asp-route-id="@pws.PowerSupplyId"
                            class="btn btn-primary mx-2" style="width: 100%;">
-                            <i class="bi bi-pencil-square"></i> Edit
+                            <i class="bi bi-pencil-square"></i> Оновити
                         </a>
                         <a asp-controller="Parts" asp-action="DeletePS" asp-route-id="@pws.PowerSupplyId"
                            class="btn btn-danger mx-2" style="width: 100%;">
-                            <i class="bi bi-trash-fill"></i> Delete
+                            <i class="bi bi-trash-fill"></i> Видалити
                         </a>
                     </div>
             </td>
@@ -655,7 +655,7 @@
         <div class="col-6">
             <h2 class="table-headers" style="color:#B46060; margin-bottom: 10px">Корпуси</h2>
             <a asp-controller="Parts" asp-action="CreateCase" class="btn btn-primary">
-                Add new item
+                Додати
             </a>
         </div>
     </div>
@@ -666,25 +666,25 @@
     <thead>
         <tr>
             <th style="text-align: center; color:#6A5ACD">
-                Manufacturer
+                Виробник
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Model
+                Модель
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Type
+                Тип
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Color
+                Колір
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Motherboard form factor
+                Форм-фактор
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Price
+                Ціна
             </th>
             <th style="text-align: center; color:#6A5ACD">
-                Amount in stock
+                Наявність,од
             </th>
             <th>
 
@@ -722,11 +722,11 @@
                     <div class="w-100 btn-group d-flex justify-content-center" role="group">
                         <a asp-controller="Parts" asp-action="UpdateCase" asp-route-id="@cases.CaseId"
                            class="btn btn-primary mx-2" style="width: 100%;">
-                            <i class="bi bi-pencil-square"></i> Edit
+                            <i class="bi bi-pencil-square"></i> Оновити
                         </a>
                         <a asp-controller="Parts" asp-action="DeleteCase" asp-route-id="@cases.CaseId"
                            class="btn btn-danger mx-2" style="width: 100%;">
-                            <i class="bi bi-trash-fill"></i> Delete
+                            <i class="bi bi-trash-fill"></i> Видалити
                         </a>
                     </div>
                 </td>

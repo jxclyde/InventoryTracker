@@ -4,7 +4,7 @@
 <form method="post" asp-controller="Parts" asp-action="DeleteCasePost" asp-route-id="@Model.CaseId">
 	<div class="border p-3 mt-4">
 		<div class="row pb-2">
-			<h2 class="text-primary">Delete Item</h2>
+			<h2 class="text-primary">Видалити</h2>
 		</div>
 		<div asp-validation-summary="All"></div>
 		<input type="hidden" asp-for="CaseId" />
@@ -43,9 +43,9 @@
 			<input asp-for="AmountInStock" disabled />
 			<span asp-validation-for="AmountInStock" class="text-danger"></span>
 		</div>
-		<button type="submit" class="btn btn-primary" style="width:150px">Delete</button>
+		<button type="submit" class="btn btn-primary" style="width:150px">Видалити</button>
 		<a asp-controller="Parts" asp-action="PartsIndex" class="btn btn-secondary" style="width:150px">
-			Back to Catalogue
+			Назад до каталогу
 		</a>
 	</div>
 

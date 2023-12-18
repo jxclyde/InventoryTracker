@@ -2,7 +2,7 @@
 
 namespace InventoryTracker.Models.DomainPeripherals
 {
-    public class Keyboard
+    public class Keyboard // На діаграмі класів діаграма - (2)
     {
         [Key]
         public int KeyboardId { get; set; }

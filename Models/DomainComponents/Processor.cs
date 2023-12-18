@@ -2,7 +2,7 @@
 
 namespace InventoryTracker.Models.DomainComponents
 {
-    public class Processor
+    public class Processor // На діаграмі класів діаграма - (11)
     {
         [Key]
         public int ProcessorId { get; set; }

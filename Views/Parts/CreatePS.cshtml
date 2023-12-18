@@ -4,7 +4,7 @@
 <form method="post">
 	<div class="border p-3 mt-4">
 		<div class="row pb-2">
-			<h2 class="text-primary">Create Item</h2>
+			<h2 class="text-primary">Додати</h2>
 		</div>
 		<div asp-validation-summary="All"></div>
 		<div class="mb-3">
@@ -42,9 +42,9 @@
 			<input asp-for="AmountInStock" />
 			<span asp-validation-for="AmountInStock" class="text-danger"></span>
 		</div>
-		<button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+		<button type="submit" class="btn btn-primary" style="width:150px">Додати</button>
 		<a asp-controller="Parts" asp-action="PartsIndex" class="btn btn-secondary" style="width:150px">
-			Back to Catalogue
+			Назад до каталогу
 		</a>
 	</div>
 

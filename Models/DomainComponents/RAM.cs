@@ -2,7 +2,7 @@
 
 namespace InventoryTracker.Models.DomainComponents
 {
-    public class RAM
+    public class RAM // На діаграмі класів діаграма - (12)
     {
         [Key]
         public int RAMId { get; set; }

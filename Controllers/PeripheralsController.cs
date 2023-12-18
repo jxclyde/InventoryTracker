@@ -6,7 +6,7 @@ using InventoryTracker.Models.DomainPeripherals;
 
 namespace InventoryTracker.Controllers
 {
-    public class PeripheralsController : Controller
+    public class PeripheralsController : Controller // На діаграмі класів діаграма - (1)
     {
         private readonly InventoryDbContext _db;
 
@@ -47,6 +47,7 @@ namespace InventoryTracker.Controllers
             {
                 _db.Keyboards.Add(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Товар успішно додано";
                 return RedirectToAction("PeripheralsIndex");
             }
             return View(obj);
@@ -76,6 +77,7 @@ namespace InventoryTracker.Controllers
             {
                 _db.Keyboards.Update(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Товар успішно оновлено";
                 return RedirectToAction("PeripheralsIndex");
             }
             return View(obj);
@@ -108,6 +110,7 @@ namespace InventoryTracker.Controllers
             }
             _db.Keyboards.Remove(obj);
             _db.SaveChanges();
+            TempData["success"] = "Товар успішно видалено";
             return RedirectToAction("PeripheralsIndex");
         }
 
@@ -126,6 +129,7 @@ namespace InventoryTracker.Controllers
             {
                 _db.Mice.Add(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Товар успішно додано";
                 return RedirectToAction("PeripheralsIndex");
             }
             return View(obj);
@@ -155,6 +159,7 @@ namespace InventoryTracker.Controllers
             {
                 _db.Mice.Update(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Товар успішно оновлено";
                 return RedirectToAction("PeripheralsIndex");
             }
             return View(obj);
@@ -187,6 +192,7 @@ namespace InventoryTracker.Controllers
             }
             _db.Mice.Remove(obj);
             _db.SaveChanges();
+            TempData["success"] = "Товар успішно видалено";
             return RedirectToAction("PeripheralsIndex");
         }
 
@@ -205,6 +211,7 @@ namespace InventoryTracker.Controllers
             {
                 _db.Mousepads.Add(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Товар успішно додано";
                 return RedirectToAction("PeripheralsIndex");
             }
             return View(obj);
@@ -234,6 +241,7 @@ namespace InventoryTracker.Controllers
             {
                 _db.Mousepads.Update(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Товар успішно оновлено";
                 return RedirectToAction("PeripheralsIndex");
             }
             return View(obj);
@@ -266,13 +274,9 @@ namespace InventoryTracker.Controllers
             }
             _db.Mousepads.Remove(obj);
             _db.SaveChanges();
+            TempData["success"] = "Товар успішно видалено";
             return RedirectToAction("PeripheralsIndex");
         }
-
-
-
-
-
 
 
     }

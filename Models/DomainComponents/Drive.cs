@@ -2,7 +2,7 @@
 
 namespace InventoryTracker.Models.DomainComponents
 {
-    public class Drive
+    public class Drive // На діаграмі класів діаграма - (7)
     {
         [Key]
         public int DriveId { get; set; }

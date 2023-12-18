@@ -5,7 +5,7 @@ using InventoryTracker.Models.DomainComponents;
 
 namespace InventoryTracker.Controllers
 {
-    public class PartsController : Controller
+    public class PartsController : Controller // На діаграмі класів діаграма - (5)
     {
         private readonly InventoryDbContext _db;
 
@@ -52,6 +52,7 @@ namespace InventoryTracker.Controllers
             {
                 _db.Processors.Add(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Товар успішно додано";
                 return RedirectToAction("PartsIndex");
             }
             return View(obj);
@@ -81,6 +82,7 @@ namespace InventoryTracker.Controllers
             {
                 _db.Processors.Update(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Товар успішно оновлено";
                 return RedirectToAction("PartsIndex");
             }
             return View(obj);
@@ -113,6 +115,7 @@ namespace InventoryTracker.Controllers
             }
             _db.Processors.Remove(obj);
             _db.SaveChanges();
+            TempData["success"] = "Товар успішно видалено";
             return RedirectToAction("PartsIndex");
         }
 
@@ -132,6 +135,7 @@ namespace InventoryTracker.Controllers
             {
                 _db.Motherboards.Add(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Товар успішно додано";
                 return RedirectToAction("PartsIndex");
             }
             return View(obj);
@@ -161,6 +165,7 @@ namespace InventoryTracker.Controllers
             {
                 _db.Motherboards.Update(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Товар успішно оновлено";
                 return RedirectToAction("PartsIndex");
             }
             return View(obj);
@@ -193,6 +198,7 @@ namespace InventoryTracker.Controllers
             }
             _db.Motherboards.Remove(obj);
             _db.SaveChanges();
+            TempData["success"] = "Товар успішно видалено";
             return RedirectToAction("PartsIndex");
         }
 
@@ -212,6 +218,7 @@ namespace InventoryTracker.Controllers
             {
                 _db.GraphicsCards.Add(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Товар успішно додано";
                 return RedirectToAction("PartsIndex");
             }
             return View(obj);
@@ -241,6 +248,7 @@ namespace InventoryTracker.Controllers
             {
                 _db.GraphicsCards.Update(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Товар успішно оновлено";
                 return RedirectToAction("PartsIndex");
             }
             return View(obj);
@@ -273,6 +281,7 @@ namespace InventoryTracker.Controllers
             }
             _db.GraphicsCards.Remove(obj);
             _db.SaveChanges();
+            TempData["success"] = "Товар успішно видалено";
             return RedirectToAction("PartsIndex");
         }
 
@@ -285,12 +294,13 @@ namespace InventoryTracker.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult CreatDrive(Drive obj)
+        public IActionResult CreateDrive(Drive obj)
         {
             if (ModelState.IsValid)
             {
                 _db.Drives.Add(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Товар успішно додано";
                 return RedirectToAction("PartsIndex");
             }
             return View(obj);
@@ -320,6 +330,7 @@ namespace InventoryTracker.Controllers
             {
                 _db.Drives.Update(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Товар успішно оновлено";
                 return RedirectToAction("PartsIndex");
             }
             return View(obj);
@@ -352,6 +363,7 @@ namespace InventoryTracker.Controllers
             }
             _db.Drives.Remove(obj);
             _db.SaveChanges();
+            TempData["success"] = "Товар успішно видалено";
             return RedirectToAction("PartsIndex");
         }
 
@@ -365,12 +377,13 @@ namespace InventoryTracker.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult CreatRAM(RAM obj)
+        public IActionResult CreateRAM(RAM obj)
         {
             if (ModelState.IsValid)
             {
                 _db.RAMs.Add(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Товар успішно додано";
                 return RedirectToAction("PartsIndex");
             }
             return View(obj);
@@ -400,6 +413,7 @@ namespace InventoryTracker.Controllers
             {
                 _db.RAMs.Update(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Товар успішно оновлено";
                 return RedirectToAction("PartsIndex");
             }
             return View(obj);
@@ -432,6 +446,7 @@ namespace InventoryTracker.Controllers
             }
             _db.RAMs.Remove(obj);
             _db.SaveChanges();
+            TempData["success"] = "Товар успішно видалено";
             return RedirectToAction("PartsIndex");
         }
 
@@ -444,12 +459,13 @@ namespace InventoryTracker.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult CreatPS(PowerSupply obj)
+        public IActionResult CreatePS(PowerSupply obj)
         {
             if (ModelState.IsValid)
             {
                 _db.PowerSupplies.Add(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Товар успішно додано";
                 return RedirectToAction("PartsIndex");
             }
             return View(obj);
@@ -479,6 +495,7 @@ namespace InventoryTracker.Controllers
             {
                 _db.PowerSupplies.Update(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Товар успішно оновлено";
                 return RedirectToAction("PartsIndex");
             }
             return View(obj);
@@ -511,6 +528,7 @@ namespace InventoryTracker.Controllers
             }
             _db.PowerSupplies.Remove(obj);
             _db.SaveChanges();
+            TempData["success"] = "Товар успішно видалено";
             return RedirectToAction("PartsIndex");
         }
 
@@ -523,12 +541,13 @@ namespace InventoryTracker.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult CreatCase(Case obj)
+        public IActionResult CreateCase(Case obj)
         {
             if (ModelState.IsValid)
             {
                 _db.Cases.Add(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Товар успішно додано";
                 return RedirectToAction("PartsIndex");
             }
             return View(obj);
@@ -558,6 +577,7 @@ namespace InventoryTracker.Controllers
             {
                 _db.Cases.Update(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Товар успішно оновлено";
                 return RedirectToAction("PartsIndex");
             }
             return View(obj);
@@ -590,10 +610,9 @@ namespace InventoryTracker.Controllers
             }
             _db.Cases.Remove(obj);
             _db.SaveChanges();
+            TempData["success"] = "Товар успішно видалено";
             return RedirectToAction("PartsIndex");
         }
-
-
 
 
     }

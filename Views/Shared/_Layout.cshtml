@@ -1,11 +1,15 @@
-﻿<!DOCTYPE html>
+﻿<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - InventoryTracker</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/bootswatchTheme.css" asp-append-version="true" />
+    @* Додаємо всі необхідні посилання для відображення у проекті :
+    bootstrap, bootswatchTheme - теми та стилі
+    toastr - для сповіщень *@
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> 
+    <link rel="stylesheet" href="~/css/bootswatchTheme.css" asp-append-version="true" /> 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" /> 
     <link rel="stylesheet" href="~/InventoryTracker.styles.css" asp-append-version="true" />
 </head>
 <body>
@@ -46,6 +50,8 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            @* Використовуємо створений partial "_Notification" view для відображення сповіщень *@
+            <partial name="_Notification"></partial> 
             @RenderBody()
         </main>
     </div>

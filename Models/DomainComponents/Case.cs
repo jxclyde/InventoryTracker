@@ -2,7 +2,7 @@
 
 namespace InventoryTracker.Models.DomainComponents
 {
-    public class Case
+    public class Case // На діаграмі класів діаграма - (6)
     {
         [Key]
         public int CaseId { get; set; }

@@ -2,7 +2,7 @@
 
 namespace InventoryTracker.Models.DomainComponents
 {
-    public class PowerSupply
+    public class PowerSupply // На діаграмі класів діаграма - (10)
     {
         [Key]
         public int PowerSupplyId { get; set; }

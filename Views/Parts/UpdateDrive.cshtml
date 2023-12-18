@@ -4,7 +4,7 @@
 <form method="post" asp-action="UpdateDrive">
 	<div class="border p-3 mt-4">
 		<div class="row pb-2">
-			<h2 class="text-primary">Edit Item</h2>
+			<h2 class="text-primary">Редагування</h2>
 		</div>
 		<div asp-validation-summary="All"></div>
 		<input type="hidden" asp-for="DriveId" />
@@ -53,9 +53,9 @@
 			<input asp-for="AmountInStock" />
 			<span asp-validation-for="AmountInStock" class="text-danger"></span>
 		</div>
-		<button type="submit" class="btn btn-primary" style="width:150px">Update</button>
+		<button type="submit" class="btn btn-primary" style="width:150px">Оновити</button>
 		<a asp-controller="Parts" asp-action="PartsIndex" class="btn btn-secondary" style="width:150px">
-			Back to Catalogue
+			Назад до каталогу
 		</a>
 	</div>
 

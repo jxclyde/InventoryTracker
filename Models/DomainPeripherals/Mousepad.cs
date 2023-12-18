@@ -2,7 +2,7 @@
 
 namespace InventoryTracker.Models.DomainPeripherals
 {
-    public class Mousepad
+    public class Mousepad // На діаграмі класів діаграма - (4)
     {
         [Key]
         public int MousepadId { get; set; }
